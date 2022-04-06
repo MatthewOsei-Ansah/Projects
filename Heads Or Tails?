@@ -1,0 +1,39 @@
+import random
+def Loop():
+    print("Invalid Choice")
+    print("Please simply enter H or T")
+    print("")
+    Coin = ["Heads", "Tails"]
+    print("Welcome to Heads Or Tails!")
+    print("")
+    Choice = str(input("Enter you guess here as H or T >>> ")).upper()
+
+    if Choice == "H":
+        Choice = ("Heads")
+    elif Choice == "T":
+        Choice = ("Tails")
+    else:
+        Loop()
+    
+
+Coin = ["Heads", "Tails"]
+print("Welcome to Heads Or Tails!")
+print("")
+Choice = str(input("Enter you guess here as H or T >>> ")).upper()
+
+if Choice == "H":
+    Choice = ("Heads")
+
+elif Choice == "T":
+    Choice = ("Tails")
+
+else:
+    Loop()
+
+land = random.choice(Coin)
+if Choice == land:
+    print(land)
+    print("Well done")
+
+elif Choice != land:
+    print("Unlucky")
