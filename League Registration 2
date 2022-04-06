@@ -1,0 +1,72 @@
+fee = 10
+casual = 20
+expert = 35
+
+print("Welcome to the player fee calculator!")
+print("")
+email = input("Enter your email address here. >>> ")
+skill = input("Enter your skill level here. (E for expert and C for casual) >>> ").upper()
+country = input("Enter your country here please. (US, UK or AU) >>> ").upper()
+
+
+if skill == "E":
+  fee = fee + expert
+  if country == "UK":
+    print("Your fee is: £",fee) 
+  if country == "US":
+    fee = fee*1.5
+    print("Your fee is: $", fee)
+  if country == "AU":
+    fee = fee*2
+    print("Your fee is: A$", fee)
+
+if skill == "C":
+  fee = fee + casual
+  if country == "UK":
+    print("Your fee is: £", fee)
+  if country == "US":
+    fee = fee*1.5
+    print("Your fee is: $", fee)
+  if country == "AU":
+    fee = fee*2
+    print("Your fee is: A$", fee)
+
+print("")
+another = input("Would you like to calculate another fee? Y/N >>> ").upper()
+
+while another == "Y":
+  fee = 10
+  print("Welcome to the player fee calculator!")
+  print("")
+  email = input("Enter your email address here. >>> ")
+  skill = input("Enter your skill level here. (E for expert and C for casual) >>> ").upper()
+  country = input("Enter your country here please. (US, UK or AU) >>> ").upper()
+  print("")
+  if skill == "E":    
+    fee = fee + expert
+    if country == "UK":
+      print("Your fee is: £",fee) 
+    if country == "US":
+      fee = fee*1.5
+      print("Your fee is: $", fee)
+    if country == "AU":
+      fee = fee*2
+      print("Your fee is: A$", fee)
+
+    if skill == "C":
+        fee = fee + casual
+        if country == "UK":                    
+          print("Your fee is: £", fee)
+        if country == "US":
+          fee = fee*1.5
+          print("Your fee is: $", fee)
+        if country == "AU":          
+          fee = fee*2
+          print("Your fee is: A$", fee)
+  
+  print("") 
+  another = input("Would you like to calculate another fee? Y/N >>> ").upper()   
+
+print("")
+print("Have a great day!")  
+  
