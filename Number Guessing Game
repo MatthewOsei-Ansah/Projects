@@ -1,0 +1,20 @@
+
+import random
+
+Correct = False 
+num = random.randint(1,10)
+
+while Correct == False:
+    num = random.randint(1,10)
+    Guess = int(input("Enter your guess btween 1 and 10 >>> "))
+
+    if Guess == num:
+        print(num)
+        Correct == True
+
+    elif Guess != num:
+        print(num)
+        Correct == False
+        
+
+print("Well Done!")   
