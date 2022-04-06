@@ -1,0 +1,27 @@
+
+count = 0
+maxWeight = 0
+minWeight = 9999
+end = False
+ 
+weight = int(input("enter weight >>>"))
+ 
+while end == False:
+    if weight <= 0:
+        print("error. please try again")
+ 
+    else:
+        count = count + 1
+        if weight > maxWeight:
+            maxWeight = weight
+        if weight < minWeight:
+            minWeight = weight
+    weight = int(input("enter another weight or 0 to quit >>>"))
+   
+    if weight == 0:
+        end = True
+   
+print(" ")
+print("count =", count)
+print("Heaviest =", maxWeight)
+print("Lightest =", minWeight)
