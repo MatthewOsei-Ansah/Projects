@@ -1,0 +1,14 @@
+Mark = int(input("Enter a mark: "))
+total = Mark
+count = 1
+
+while Mark != -1:
+  Mark = int(input("Enter a mark: "))
+  total = total + Mark
+  count = count + 1
+
+count = count -1
+total = total + 1
+Avg = total/count
+print("Number of pupils = ", count)
+print("Average mark = ", Avg)
