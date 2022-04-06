@@ -1,0 +1,39 @@
+print("League Registration")
+print("")
+firstname = input("Enter your name here please >>> ")
+lastname = input("Enter your last name here  please >>> ")
+nickname = input("Enter a nickname here please >>> ")
+email = input("Enter your email address here please >>> ")
+skill = str(input("Enter a skill level here C for casual and E for expert >>> ")).upper()
+print("")
+
+print("Firstname:", firstname)
+print("Lastname:", lastname)
+print("Nickname:", nickname)
+print("Email:", email)
+print("Skill level:", skill)
+print("")
+
+correct = input("Are these details correct? Y/N >>> ").upper()
+
+while correct == "N":
+  print("League Registration")
+  print("")
+  firstname = input("Enter your name here please >>> ")
+  lastname = input("Enter your last name here  please >>> ")
+  nickname = input("Enter a nickname here please >>> ")
+  email = input("Enter your email address here please >>> ")
+  skill = str(input("Enter a skill level here C for casual and E for expert >>> ")).upper()
+  print("")
+
+  print("Firstname:", firstname)
+  print("Lastname:", lastname)
+  print("Nickname:", nickname)
+  print("Email:", email)
+  print("Skill level:", skill)
+  print("")
+
+  correct = input("Are these details correct? Y/N >>> ").upper()
+
+print("")
+print("League Registration")
