@@ -21,3 +21,4 @@ class Button():
     def draw(self):
         #Draw button on screen
         screen.blit(self.image, (self.rect.x, self.rect.y))
+#
