@@ -1,0 +1,23 @@
+import pygame
+import button
+
+SCREEN_HEIGHT = 500
+SCREEN_WIDTH = 800
+
+Screen = pygame.disply.set_mode((SCREE_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Button Test")
+
+#Load button image
+start_img = pygame.image.load("start_btn.png").convert_alpha()
+start_img = pygame.image.load("exit_btn.png").convert_alpha()
+
+# button class
+class Button():
+    def __init__(self, x, y, image):
+        self.image = image
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x, y)
+
+    def draw(self):
+        #Draw button on screen
+        screen.blit(self.image, (self.rect.x, self.rect.y))
