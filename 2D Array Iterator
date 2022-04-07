@@ -7,4 +7,4 @@ Array = [
 for i in range(len(Array)):
     for j in range(len(Array[i])):
         time.sleep(0.5)
-        print(Array[i][j]) 
+        print(Array[i][j], end = ' ') 
