@@ -1,0 +1,30 @@
+import pygame
+import math
+import time
+import random
+
+x = random.randint(5, 10)
+
+def MainMenu():
+    print("Welcome to calculator 3.0!")
+    print("Please select what you like to do with the corrosponding number")
+    print("1) Addition")
+    print("2) Subtraction")
+    print("3) Multiplication")
+    print("4) Division")
+    print("5) Trigonometry")
+    print("6) Exponential")
+    print("7) Square Root")
+    Choice = int(input("Enter your choice here >>> "))
+
+
+    if Choice < 1 or Choice > 7:
+         print("Invalid Input")
+         for i in range(x):
+             print("Resarting Menu.", end = '\r')
+             time.sleep(0.25)
+             print("Resarting Menu..", end = '\r')
+             time.sleep(0.25)
+             print("Resarting Menu...", end = '\r')
+             
+MainMenu()
