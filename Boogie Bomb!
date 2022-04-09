@@ -1,0 +1,29 @@
+import pygame
+import random
+
+pygame.init()
+clock = pygame.time.Clock()
+pygame.display.set_caption("Boogie Bomb!")
+
+pygame.mixer.music.load("fortnite_boogie_bomb-647b44da-6ef2-43e8-8c75-1f3229f83b6f.mp3")
+pygame.mixer.music.play(-1)
+
+
+
+screen = pygame.display.set_mode((800, 400))
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            exit()
+
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+
+    colour = (r,g, b)
+    screen.fill(colour)
+
+    pygame.display.update()
+    clock.tick(60)
