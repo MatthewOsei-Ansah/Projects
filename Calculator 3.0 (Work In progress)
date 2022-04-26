@@ -10,24 +10,60 @@ x = random.randint(5, 10)
 # Loading
 def Loading():
   for i in range(x):
-    sys.stdout.write('\rRestarting |')
+    sys.stdout.write('\rLoading |')
     time.sleep(0.1)
-    sys.stdout.write('\rRestarting /')
+    sys.stdout.write('\rLoading /')
     time.sleep(0.1)
-    sys.stdout.write('\rRestarting -')
+    sys.stdout.write('\rLoading -')
     time.sleep(0.1)
-    sys.stdout.write('\rRestarting \\')
+    sys.stdout.write('\rLoading \\')
     time.sleep(0.1)
 
 # Calculator stuff
-def Addition(num1, num2):
+def Addition(num1, num2, x):
   ans = num1 + num2
-  returnvalue = ("{} + {} = {}")
+  returnvalue = ("\n {} + {} = {}")
+  Loading()
   print(returnvalue.format(num1, num2, ans))
 
+def Subtraction(num1, num2):
+  ans = num1 - num2
+  returnvalue = ("\n {} - {} = {}")
+  Loading()
+  print(returnvalue.format(num1, num2, ans))
+
+def Multiplication(num1, num2):
+  ans = num1 * num2
+  returnvalue = ("\n {} x {} = {}")
+  Loading()
+  print(returnvalue.format(num1, num2, ans))
+
+def Division(num1, num2):
+  choice = str(input("Would you like your answer to return as rounded number or precise value? W/R >>> ")).upper()
+  if choice == "P":
+   ans = num1 / num2
+   returnvalue = ("\n {} ÷ {} = {}")
+   Loading()
+   print(returnvalue.format(num1, num2, ans))
+
+  elif choice == "R":
+    ans = num1 // num2
+    returnvalue = ("\n {} ÷ {} = {}")
+    print(returnvalue.format(num1, num2, ans))
+
+  else:
+    print("Please enter either W or R for you answer.")
+    Loading()
+    MainMenu()
+
+def Exp(num1):
+  ans = num1 * num2
+  returnvalue = ("\n {} x {} = {}")
+  Loading()
+  print(returnvalue.format(num1, num2, ans))
 # Functions 
 def MainMenu():  
-    print("Welcome to calculator 3.0!")
+    print("\nWelcome to calculator 3.0!")
     print("Please select what you like to do with the corrosponding number")
     print("1) Addition")
     print("2) Subtraction")
@@ -41,14 +77,46 @@ def MainMenu():
 # Wrong Choice
     if Choice < 1 or Choice > 7:
       print("Invalid Input")
+      print("\n Restarting")
       Loading()
       MainMenu()
     elif Choice == 1:
       num1 = int(input("Enter your first number >>> "))
       num2 = int(input("Enter your second number >>> "))
       Addition(num1, num2)
-    
-    
-    
+      MainMenu()
+      
+    elif Choice == 2:
+      num1 = int(input("Enter your first number >>> "))
+      num2 = int(input("Enter your second number >>> "))
+      Subtraction(num1, num2)   
+      MainMenu()
 
+    elif Choice == 3:
+      num1 = int(input("Enter your first number >>> "))
+      num2 = int(input("Enter your second number >>> "))
+      Multiplication(num1, num2)
+      MainMenu()
+
+    elif Choice == 4:
+      num1 = int(input("Enter your first number >>> "))
+      num2 = int(input("Enter your second number >>> "))
+      Division(num1, num2)  
+      MainMenu()  
+
+    elif Choice == 5:
+      print("Not available the moment")
+      Loading()
+      MainMenu()
+
+    elif Choice == 6:
+      num1 = int(input("Enter your first number >>> "))
+      num2 = int(input("Enter your second number >>> "))
+      Exp(num1, num2)  
+      MainMenu() 
+
+    elif Choice == 7:
+      num1 = int(input("Enter your number >>> "))
+      Sqrtrt(num1)  
+      MainMenu() 
 MainMenu()
