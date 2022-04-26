@@ -1,0 +1,54 @@
+import math
+import time
+import random
+import sys
+
+# Important Variables
+x = random.randint(5, 10)
+
+
+# Loading
+def Loading():
+  for i in range(x):
+    sys.stdout.write('\rRestarting |')
+    time.sleep(0.1)
+    sys.stdout.write('\rRestarting /')
+    time.sleep(0.1)
+    sys.stdout.write('\rRestarting -')
+    time.sleep(0.1)
+    sys.stdout.write('\rRestarting \\')
+    time.sleep(0.1)
+
+# Calculator stuff
+def Addition(num1, num2):
+  ans = num1 + num2
+  returnvalue = ("{} + {} = {}")
+  print(returnvalue.format(num1, num2, ans))
+
+# Functions 
+def MainMenu():  
+    print("Welcome to calculator 3.0!")
+    print("Please select what you like to do with the corrosponding number")
+    print("1) Addition")
+    print("2) Subtraction")
+    print("3) Multiplication")
+    print("4) Division")
+    print("5) Trigonometry")
+    print("6) Exponential")
+    print("7) Square Root")
+    Choice = int(input("Enter your choice here >>> "))
+
+# Wrong Choice
+    if Choice < 1 or Choice > 7:
+      print("Invalid Input")
+      Loading()
+      MainMenu()
+    elif Choice == 1:
+      num1 = int(input("Enter your first number >>> "))
+      num2 = int(input("Enter your second number >>> "))
+      Addition(num1, num2)
+    
+    
+    
+
+MainMenu()
