@@ -4,7 +4,7 @@ import random
 import sys
 
 # Important Variables
-x = random.randint(5, 10)
+x = random.randint(2, 7)
 
 
 # Loading
@@ -22,49 +22,83 @@ def Loading():
 # Calculator stuff
 def Addition(num1, num2, x):
   ans = num1 + num2
-  returnvalue = ("\n {} + {} = {}")
+  returnvalue = ("\n{} + {} = {}")
   Loading()
+  print("")
   print(returnvalue.format(num1, num2, ans))
 
 def Subtraction(num1, num2):
   ans = num1 - num2
-  returnvalue = ("\n {} - {} = {}")
+  returnvalue = ("\n{} - {} = {}")
   Loading()
+  print("")
   print(returnvalue.format(num1, num2, ans))
 
 def Multiplication(num1, num2):
   ans = num1 * num2
-  returnvalue = ("\n {} x {} = {}")
+  returnvalue = ("\n{} x {} = {}")
   Loading()
+  print("")
   print(returnvalue.format(num1, num2, ans))
 
 def Division(num1, num2):
-  choice = str(input("Would you like your answer to return as rounded number or precise value? W/R >>> ")).upper()
+  choice = str(input("Would you like your answer to return as rounded number or precise value? R/P >>> ")).upper()
   if choice == "P":
    ans = num1 / num2
-   returnvalue = ("\n {} ÷ {} = {}")
+   returnvalue = ("\n{} ÷ {} = {}")
    Loading()
+   print("")
    print(returnvalue.format(num1, num2, ans))
 
   elif choice == "R":
     ans = num1 // num2
-    returnvalue = ("\n {} ÷ {} = {}")
+    returnvalue = ("\n{} ÷ {} = {}")
+    Loading()
+    print("")
     print(returnvalue.format(num1, num2, ans))
 
   else:
+    print("")
     print("Please enter either W or R for you answer.")
     Loading()
     MainMenu()
 
-def Exp(num1):
-  ans = num1 * num2
-  returnvalue = ("\n {} x {} = {}")
+def Exp(num1, num2):
+  ans = num1 ** num2
+  returnvalue = ("\n{} to the power of {} = {}")
   Loading()
+  print("")
   print(returnvalue.format(num1, num2, ans))
-# Functions 
+
+def Sqrt(num1):
+  x = math.sqrt(num1)
+  returnvalue = ("\nThe square root of {} is {}")
+  Loading()
+  print("")
+  print(returnvalue.format(num1, x))
+
+def Circle():
+  print("Welcome To The Circle Menu")
+  print("Please Select What You Would Like To Do With The Corrosponding Number")
+  print("1) Circumference")
+  print("2) Area")
+  print("3) Volume")
+  print("4) Surface Area")
+  print("5) Return To Main Menu")
+  choice = int(input("Please enter your choice here >>> "))
+
+  if choice == 1:
+    d = int(input("Enter the diameter here >>> "))
+    pi = math.pi
+    ans = pi * d
+    Loading()
+    returnvalue = ("\nThe circumference of the circle is {}")
+    print(returnvalue.format(ans))
+# Interface 
+  
 def MainMenu():  
-    print("\nWelcome to calculator 3.0!")
-    print("Please select what you like to do with the corrosponding number")
+    print("\nWelcome To Calculator 3.0!")
+    print("Please Select What You Like To Do With The Corrosponding Number")
     print("1) Addition")
     print("2) Subtraction")
     print("3) Multiplication")
@@ -72,12 +106,13 @@ def MainMenu():
     print("5) Trigonometry")
     print("6) Exponential")
     print("7) Square Root")
+    print("8) Circle Stuff")
     Choice = int(input("Enter your choice here >>> "))
 
 # Wrong Choice
-    if Choice < 1 or Choice > 7:
+    if Choice < 1 or Choice > 8:
       print("Invalid Input")
-      print("\n Restarting")
+      print("\nRestarting")
       Loading()
       MainMenu()
     elif Choice == 1:
@@ -111,12 +146,16 @@ def MainMenu():
 
     elif Choice == 6:
       num1 = int(input("Enter your first number >>> "))
-      num2 = int(input("Enter your second number >>> "))
+      q = str(num1)
+      num2 = int(input("What would you like to raise " + q + " to? >>> "))
       Exp(num1, num2)  
       MainMenu() 
 
     elif Choice == 7:
       num1 = int(input("Enter your number >>> "))
-      Sqrtrt(num1)  
+      Sqrt(num1)  
       MainMenu() 
+
+    elif Choice == 8:
+      Circle()
 MainMenu()
