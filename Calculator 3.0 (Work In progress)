@@ -20,7 +20,7 @@ def Loading():
     time.sleep(0.1)
 
 # Calculator stuff
-def Addition(num1, num2, x):
+def Addition(num1, num2):
   ans = num1 + num2
   returnvalue = ("\n{} + {} = {}")
   Loading()
@@ -61,6 +61,7 @@ def Division(num1, num2):
     print("")
     print("Please enter either W or R for you answer.")
     Loading()
+    time.sleep(0.5)
     MainMenu()
 
 def Exp(num1, num2):
@@ -69,6 +70,7 @@ def Exp(num1, num2):
   Loading()
   print("")
   print(returnvalue.format(num1, num2, ans))
+  time.sleep(0.5)
 
 def Sqrt(num1):
   x = math.sqrt(num1)
@@ -76,6 +78,7 @@ def Sqrt(num1):
   Loading()
   print("")
   print(returnvalue.format(num1, x))
+  time.sleep(0.5)
 
 def Circle():
   print("Welcome To The Circle Menu")
@@ -96,7 +99,7 @@ def Circle():
     print(returnvalue.format(ans))
 # Interface 
   
-def MainMenu():  
+def MainMenu():    
     print("\nWelcome To Calculator 3.0!")
     print("Please Select What You Like To Do With The Corrosponding Number")
     print("1) Addition")
