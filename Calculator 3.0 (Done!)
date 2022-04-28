@@ -1,0 +1,208 @@
+import math
+import time
+import random
+import sys
+
+# Important Variables
+x = random.randint(2, 7)
+
+
+# Loading
+def Loading():
+    for i in range(x):
+        sys.stdout.write('\rLoading |')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading /')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading -')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading \\')
+        time.sleep(0.05)
+
+
+# Calculator stuff
+def Addition(num1, num2):
+    ans = num1 + num2
+    returnvalue = ("\n{} + {} = {}")
+    Loading()
+    print("")
+    print(returnvalue.format(num1, num2, ans))
+
+
+def Subtraction(num1, num2):
+    ans = num1 - num2
+    returnvalue = ("\n{} - {} = {}")
+    Loading()
+    print("")
+    print(returnvalue.format(num1, num2, ans))
+
+
+def Multiplication(num1, num2):
+    ans = num1 * num2
+    returnvalue = ("\n{} x {} = {}")
+    Loading()
+    print("")
+    print(returnvalue.format(num1, num2, ans))
+
+
+def Division(num1, num2):
+    choice = str(input("Would you like your answer to return as rounded number or precise value? R/P >>> ")).upper()
+    if choice == "P":
+        ans = num1 / num2
+        returnvalue = ("\n{} ÷ {} = {}")
+        Loading()
+        print("")
+        print(returnvalue.format(num1, num2, ans))
+
+    elif choice == "R":
+        ans = num1 // num2
+        returnvalue = ("\n{} ÷ {} = {}")
+        Loading()
+        print("")
+        print(returnvalue.format(num1, num2, ans))
+
+    else:
+        print("")
+        print("Please enter either W or R for you answer.")
+        Loading()
+
+
+def Exp(num1, num2):
+    ans = num1 ** num2
+    returnvalue = ("\n{} to the power of {} = {}")
+    Loading()
+    print("")
+    print(returnvalue.format(num1, num2, ans))
+
+
+def Sqrt(num1):
+    x = math.sqrt(num1)
+    returnvalue = ("\nThe square root of {} is {}")
+    Loading()
+    print("")
+    print(returnvalue.format(num1, x))
+
+
+def Circle():
+    print("Welcome To The Circle Menu")
+    print("Please Select What You Would Like To Do With The Corrosponding Number")
+    print("1) Circumference")
+    print("2) Area")
+    print("3) Volume")
+    print("4) Surface Area")
+    print("5) Return To Main Menu")
+    choice = int(input("Please enter your choice here >>> "))
+
+    pi = math.pi
+
+    if choice == 1:
+        d = int(input("Enter the diameter here >>> "))
+        ans = pi * d
+        Loading()
+        returnvalue = ("\nThe circumference of the circle is {}")
+        print(returnvalue.format(ans))
+
+    if choice == 2:
+        r = int(input("Enter the radius here >>> "))
+        r2 = r ** 2
+        ans = pi * r2
+        returnvalue = ("\nThe area of the circle is {}")
+        print(returnvalue.format(ans))
+
+    if choice == 3:
+        r = int(input("Enter the radius here >>> "))
+        r3 = r ** 3
+        frac = 4 / 3
+        ans = frac * pi * r3
+        returnvalue = ("\nThe volume of the sphere is {}")
+        print(returnvalue.format(ans))
+
+    if choice == 4:
+        r = int(input("Enter the radius here >>> "))
+        r2 = r ** 2
+        ans = 4 * pi * r2
+        returnvalue = ("\nThe volume of the sphere is {}")
+        print(returnvalue.format(ans))
+
+    if choice == 5:
+        print("Returning To Main Menu")
+        Loading()
+        MainMenu()
+
+
+# Interface
+
+def MainMenu():
+    print("\nWelcome To Calculator 3.0!")
+    print("Please Select What You Like To Do With The Corrosponding Number")
+    print("1) Addition")
+    print("2) Subtraction")
+    print("3) Multiplication")
+    print("4) Division")
+    print("5) Trigonometry")
+    print("6) Exponential")
+    print("7) Square Root")
+    print("8) Circle Stuff")
+    Choice = int(input("Enter your choice here >>> "))
+
+    # Wrong Choice
+    if Choice < 1 or Choice > 8:
+        print("Invalid Input")
+        print("\nRestarting")
+        Loading()
+        MainMenu()
+    elif Choice == 1:
+        num1 = int(input("Enter your first number >>> "))
+        num2 = int(input("Enter your second number >>> "))
+        Addition(num1, num2)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 2:
+        num1 = int(input("Enter your first number >>> "))
+        num2 = int(input("Enter your second number >>> "))
+        Subtraction(num1, num2)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 3:
+        num1 = int(input("Enter your first number >>> "))
+        num2 = int(input("Enter your second number >>> "))
+        Multiplication(num1, num2)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 4:
+        num1 = int(input("Enter your first number >>> "))
+        num2 = int(input("Enter your second number >>> "))
+        Division(num1, num2)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 5:
+        print("Not available the moment")
+        Loading()
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 6:
+        num1 = int(input("Enter your first number >>> "))
+        q = str(num1)
+        num2 = int(input("What would you like to raise " + q + " to? >>> "))
+        Exp(num1, num2)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 7:
+        num1 = int(input("Enter your number >>> "))
+        Sqrt(num1)
+        time.sleep(1)
+        MainMenu()
+
+    elif Choice == 8:
+        Circle()
+        time.sleep(1)
+        MainMenu()
+
+
+MainMenu()
