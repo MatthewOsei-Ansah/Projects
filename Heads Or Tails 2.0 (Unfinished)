@@ -1,0 +1,47 @@
+import random 
+import time
+import sys
+
+# Loading
+def Loading():
+    for i in range(x):
+        sys.stdout.write('\rLoading |')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading /')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading -')
+        time.sleep(0.05)
+        sys.stdout.write('\rLoading \\')
+        time.sleep(0.05)
+
+
+# Games
+def Fap():
+  print("Welcome To Flip A Coin!")
+  ready = input("You ready? Y/N > ").lower()
+  coin = ["Heads", "Tails" ]
+  x = random.randint(0,1)
+
+  if ready == "n":
+    
+  
+def MainMenu():
+  print("Welcome To Heads Or Tails")
+  print("Please Choose Which Game Mode You Would Like To Play")
+  print("1) Flip A Coin")
+  print("2) Guessing Game")
+
+  Choice = int(input("Enter Your Choice Here >>>"))
+
+  if Choice == 1:
+    Loading()
+    Fap()
+
+  elif Choice == 2:
+    Loading()
+    Gg()
+
+  else:
+    print("Please Enter Either 1 Or 2")
+    time.sleep(1.5)
+    Loading()
