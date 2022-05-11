@@ -1,0 +1,13 @@
+import math
+
+x =  input("Enter calculation > ")
+
+for i in range(len(x)):
+  a  = x.replace("x", "*")
+  b = a.replace("^", "**")
+  c = b.replace("÷", "/")
+
+try:
+  print(eval(c))
+except:
+  print("I am unable to preform that calculation :/")
