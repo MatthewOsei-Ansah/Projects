@@ -68,7 +68,7 @@ def Division(num1, num2):
 
 
 def Exp(num1, num2):
-    ans = num1 ** num2
+    ans = math.pow(num1, num2)
     returnvalue = ("\n{} to the power of {} = {}")
     Loading()
     print("")
